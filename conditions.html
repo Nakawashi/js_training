@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tuto Grafikart - conditions</title>
+	<script>
+
+		// Diff entre var et let : var avait une portee elargie, au dela du scope des brackets et pouvait porter a confusion
+
+		const	age = 17
+		const	pays = 'FR'
+		const	canDriveInEurope = pays === 'FR' && age >= 18
+		const	canDriveInUSA = pays === 'USA' && age >= 16
+
+		if (canDriveInEurope) {
+			console.log("You can drive in Europe")
+		}
+		else if (canDriveInUSA) {
+			console.log("You can drive in the USA")
+		}
+		else if (canDriveInEurope || canDriveInUSA) {
+			console.log("You can drive")
+		}
+		else {
+			console.log("You can't drive")
+		}
+
+		// -----------------------------------------------------
+
+		switch (pays) {
+			case 'FR':
+				console.log("You are in France")
+				break
+			case 'USA':
+				console.log("You are in the USA")
+				break
+		}
+
+		// -----------------------------------------------------
+
+		const	a = prompt("Enter your first number")
+		const	b = prompt("Enter your second number")
+		const	res = a * b
+		let		signe
+		if (isNaN(res)) {
+			console.log(`Impossible operation : ${a} * ${b}`)
+		} else if (res > 0) {
+			signe = 'positive'
+		} else {
+			signe = 'negative'
+		}
+		console.log(`${a} * ${b} = ${res} is ${signe}`)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
