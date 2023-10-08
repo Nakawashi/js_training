@@ -1,7 +1,7 @@
 # Récap des notions qui me trigger
 
 ## Les variables
-- Déclaration d'objets à la volée (avec des accolades)
+Déclaration d'objets à la volée (avec des accolades)
 ```js
 const b = 'Les gens'
 const person = {
@@ -111,7 +111,7 @@ Il est possible d'écrire une fonction fléchée sur une seule ligne si sa seule
 const somme = (a, b) => a + b
 ```
 
-Les callbacks :
+### Les callbacks :
 
 N'importe quoi ce langage omg on peut définir une fonction dans l'appel d'une fonction
 fn est donc un callback (convention : de l'appeler cb)
