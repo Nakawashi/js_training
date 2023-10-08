@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grafikart - les fonctions</title>
+	<script>
+
+        // function est aussi un type, c'est un objet particulier avec aussi des propriétés et des méthodes.
+        // function permet d'appeler une fonction avant de la définir car js stocke en premier toutes les fonctions avant d'exécuter le reste du code.
+        
+        //function canDrive (age, pays) {
+        const canDrive = function (age, pays) {
+            if (age >= 18 && pays === 'FR' || age >= 16 && pays === 'US') {
+                return true
+            }
+            return false
+        }
+        console.log(canDrive(18, 'FR'))
+
+        //---------------------------------------------------------
+        
+        // attention quand on passe un tableau ou un objet, c'est une référence et pas une copie
+        const notes = [12, 5, 32, 8, 17]
+        
+        function upNotes (array) {
+            array[0]++
+        }
+        upNotes(notes)
+        console.log(notes)
+        
+        //---------------------------------------------------------
+        
+        const a = {
+            firstname: 'Marie',
+            lastname: 'Curie',
+            fullname: function () {
+                // console.log(this) // va imprimer toute l'instance de l'objet
+                console.log(`${this.firstname} ${this.lastname}`);
+            }
+        }
+
+        a.fullname()
+        
+        //---------------------------------------------------------
+        
+        function maFonction () {
+            console.log(this)
+        }
+        
+        maFonction.call('hello')
+        
+        //---------------------------------------------------------
+        
+        const maFonctionFlechee = (p1, p2) => {
+            console.log(p1, p2)
+        }
+        maFonctionFlechee(1, 2)
+        // différence de cette notation : comportement de this à l'intérieur. On ne peut pas citer l'objet, l'instance, marchera pas.
+        
+        //---------------------------------------------------------
+        
+        // une ligne suffit si on a juste un return
+        const somme = (a, b) => a + b
+        console.log(somme(6, 4))
+        
+        //---------------------------------------------------------
+
+        // n'importe quoi ce langage omg on peut définir une fonction dans l'appel d'une fonction
+        // fn est donc un callback (convention : de l'appeler cb)
+        const isPair = function (a, fn) {
+            if (a % 2 === 0)
+                fn()
+        }
+
+        isPair(4, function () {
+            console.log('Mon nombre est pair')
+        })
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

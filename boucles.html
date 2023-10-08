@@ -3,9 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Grafikart - les boucles</title>
 	<script>
 		// https://www.youtube.com/watch?v=kLdQAsrcyvk
+
+		// for of : Permet de parcourir des éléments itérables, comme les éléments d'un tableau, et nous renverra la valeur
+		// for in : Permet d'itérer sur les clés (index) d'un tableau ou d'un objet
+
+		const notes = [12, 34, 456, 2, 11]
+		const person = {
+			firstname: 'Marie',
+			lastname: 'Curie'
+		}
+		for (let note of notes) {
+			console.log(note)
+		}
+
+		const greetings = 'Bonjour'
+		for (let letter of greetings) { // for in permet d'interroger l'index et on aura comme résultat la lettre en mémoire dans cet index là
+			console.log(letter)
+		}
 
 	</script>
 </head>

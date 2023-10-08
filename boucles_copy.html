@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grafikart - les boucles</title>
+	<script>
+
+		const input = prompt('Entrez un nombre entre 0 et 10 svp')
+		const notBetweenOneToTen = input > 10 || input < 0
+
+		if (notBetweenOneToTen) {
+			console.log('Regles non respectées')
+		}
+		else {
+			// let n = Number(input) -- on peut aussi convertir en faisant input * 1
+			let i = input
+			while (i >= 0) {
+				console.log(i)
+				--i
+			}
+		}
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
