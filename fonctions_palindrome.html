@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grafikart - les fonctions</title>
+	<script>
+
+		// tester si un mot est un palindrome
+		// toLowerCase() : créé une copie dans un nouvel emplacement mémoire. Ne modifie pas la string d'origine.
+		function isPalindrome (str) {
+			let array1 = str.toLowerCase()
+			console.log(`array1 : ${array1}`)
+
+			let reverse = array1.split('')
+			console.log(`reverse after split: ${reverse}`)
+
+			reverse = reverse.reverse()
+			console.log(`reverse after reverse: ${reverse}`)
+
+			reverse = reverse.join('')
+			console.log(`reverse after join: ${reverse}`)
+
+			return array1 === reverse
+		}
+
+		const words = {
+			kayak: true,
+			SOS: true,
+			Kayak: true,
+			Bonjour: false
+		}
+
+		for (let word in words) {
+			if (isPalindrome(word) !== words[word])
+			console.error(`isPalindrome(${word}) aurait dû renvoyer ${words[word]}`)
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
