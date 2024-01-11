@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafikart - les classes</title>
+    <script>
+      // les prototypes sont des fonctions particulières.
+
+      const moyenne = (notes) => {
+			nb_lettres = notes.length
+			var res = 0;
+
+			for (var note of notes) {
+				res += note
+			}
+			return res /= nb_lettres
+		}
+
+      class Student {
+        ecole = "Gymnase Morges"
+        _notes = []
+        #secret = 'Hello' // # indique un attribut privé, pas dispo pour l'héritage
+
+        constructor(firstname, lastname) {
+          this.firstname = firstname
+          this.lastname = lastname
+        }
+
+        set notes (v) {
+            if (Array.isArray(v)) //  si on ne recoit pas un tableau, initialise rien
+                this._notes = v
+        }
+
+        get name () {
+            return `${this.firstname} ${this.lastname}`
+        }
+
+        canPass () {
+            return moyenne(this._notes) >= Student.moyenne
+        }
+
+        static moyenne = 10 // directement disponible sur l'objet Student, pas dans le prototype, pas sur ses instances.
+      }
+
+      // prototype d'un prototype, un peu comme héritage. Si je redéfinis une méthode de Student, je l'écrase pour SuperStudent
+      class SuperStudent extends Student {
+        canPass ()
+        {
+            return true
+        }
+
+        // le mot clé 'super' permet d'appeler une méthode du prototype parent
+
+        constructor (firstname, lastname, notes) {
+            super(firstname, lastname)
+            this._notes = notes
+        }
+      }
+
+
+      const jeanne = new SuperStudent("Jeanne", "Dark", [8, 9, 5])
+      const marie = new Student("Marie", "Curie")
+
+      marie.notes = [10, 12, 15]
+
+
+      console.log(jeanne.name)
+
+    </script>
+  </head>
+  <body></body>
+</html>
